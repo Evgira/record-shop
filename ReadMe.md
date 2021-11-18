@@ -38,3 +38,41 @@ Most applications made for the web have to do with some sort of data manipulatio
 
    - `http://localhost:3000/records` -> should return all the records that are in our lowdb database
    - `http://localhost:3000/records` -> should add a new record to our lowdb database
+
+
+   
+
+   ## Things that are going to be done
+
+This file lists the changes that need to be made in each stage. It is ordered in reverse chronological order, meaning that the last changes made will always be on top of the file, so that readers will not have to scroll all the way down with each task added.
+
+## Task 03 - Routing and error handling
+
+As we saw in the first task, there are requests like `GET` and `POST` that define what is the functionality of each endpoint. We will now introduce `PUT` and `DELETE`.
+
+- `PUT` will update an already existing resource
+- `DELETE` will delete an already existing resource
+
+After we introduce the above requests for our record store we need to do some error handling. What happens when something goes wrong during a request? We need to let the user know what went wrong in a consistent way. We can achieve that by writing middleware functions that will take care of error responses.
+
+**Story**: Our client, the record store, would like to be able to update and delete records from their store. Except the records data model, our client would like to have two more data models. One for the users and one for the orders.
+
+**TODO**:
+
+1. Please create three more endpoints (routes) for the record data model
+
+   - `records/:id` -> a `GET` that will return a record based on the `id`
+   - `records/:id` -> a `PUT` that will update a record based on the `id`
+   - `records/:id` -> a `DELETE` that will delete a record based on the `id`
+
+2. Please create endpoints for the `users` and `orders` models. A user should contain a first name, a last name, an email, a password. An order should contain a record id and a quantity property. We will later on enrich all models with more properties.
+
+   Users Model
+
+   - `users` -> `GET` all users
+   - `users/:id` -> `GET` a user
+   - `users` -> `POST` a user
+   - `users/:id` -> `PUT` a user
+   - `users/:id` -> `DELETE` a user
+
+   Orders Model
